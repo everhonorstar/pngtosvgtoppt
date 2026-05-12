@@ -19,7 +19,7 @@
 
 ```bash
 mkdir -p ~/.codex/skills
-git clone <repo-url> ~/.codex/skills/pngtosvgtoppt
+git clone https://github.com/everhonorstar/pngtosvgtoppt.git ~/.codex/skills/pngtosvgtoppt
 ```
 
 安装 Python 依赖：

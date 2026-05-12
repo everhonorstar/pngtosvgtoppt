@@ -19,7 +19,7 @@ Clone or copy this repository into your Codex skills directory:
 
 ```bash
 mkdir -p ~/.codex/skills
-git clone <repo-url> ~/.codex/skills/pngtosvgtoppt
+git clone https://github.com/everhonorstar/pngtosvgtoppt.git ~/.codex/skills/pngtosvgtoppt
 ```
 
 Install Python dependencies:
