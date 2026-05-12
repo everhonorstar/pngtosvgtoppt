@@ -1,0 +1,8 @@
+vision_provider:
+  provider: openai
+  base_url: https://api.openai.com/v1
+  api_key_env: PNGTOSVGTOPPT_OPENAI_API_KEY
+  model:
+  timeout: 120
+  retry: 2
+  extra_options: {}

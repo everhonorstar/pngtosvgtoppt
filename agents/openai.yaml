@@ -1,0 +1,4 @@
+interface:
+  display_name: "PNG to SVG to PPT"
+  short_description: "Layer PNG slides into editable PPT SVG"
+  default_prompt: "Assess or convert PNG slide images with optional AI vision decomposition, then render layered SVG scenes and export editable PowerPoint with the bundled local converter."
