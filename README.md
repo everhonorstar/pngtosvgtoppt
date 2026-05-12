@@ -15,6 +15,8 @@
 
 ## Install as a Codex Skill
 
+### macOS / Linux
+
 Clone or copy this repository into your Codex skills directory:
 
 ```bash
@@ -31,6 +33,30 @@ python3 -m pip install -r requirements.txt
 
 Restart Codex so the skill metadata in `SKILL.md` is discovered.
 
+### Windows PowerShell
+
+Clone or copy this repository into your Codex skills directory:
+
+```powershell
+New-Item -ItemType Directory -Force "$env:USERPROFILE\.codex\skills"
+git clone https://github.com/everhonorstar/pngtosvgtoppt.git "$env:USERPROFILE\.codex\skills\pngtosvgtoppt"
+```
+
+Install Python dependencies:
+
+```powershell
+cd "$env:USERPROFILE\.codex\skills\pngtosvgtoppt"
+python -m pip install -r requirements.txt
+```
+
+If `python` is not registered on your system, use `py` instead:
+
+```powershell
+py -m pip install -r requirements.txt
+```
+
+Restart Codex so the skill metadata in `SKILL.md` is discovered.
+
 ## Configure AI Vision
 
 AI vision is optional. Manual scene scaffolding, SVG rendering, checking, finalization, and PPTX export all run locally.
@@ -39,6 +65,12 @@ To enable AI scene decomposition, copy the example env file and fill in your pro
 
 ```bash
 cp .env.example .env
+```
+
+On Windows PowerShell:
+
+```powershell
+Copy-Item .env.example .env
 ```
 
 Set both the API key and a vision-capable model name before running `ai-scene` or `auto`.
@@ -52,6 +84,8 @@ The skill looks for `.env` in this order:
 Never commit real credentials. `.env` is ignored by `.gitignore`.
 
 ## Quick Start
+
+The examples below use `python3`. On Windows, replace `python3` with `python` or `py`.
 
 Create a starter scene file without calling an AI model:
 
@@ -92,6 +126,13 @@ project/
 ```
 
 Generated project folders and PPTX exports are ignored by default.
+
+## Windows Notes
+
+- Run commands from PowerShell, Windows Terminal, or a Codex terminal that can access your Python installation.
+- The scripts are path-portable and use Python's `pathlib`/`shutil` APIs; call them with `python scripts/...` rather than relying on Unix shebang execution.
+- `cairosvg` may require native Cairo runtime support on Windows. If installing it is inconvenient, native editable PPTX export still works; only legacy PNG fallback rendering may be reduced. As an alternative, install `svglib` and `reportlab`.
+- Use a recent Python 3 version. Python 3.10+ is recommended.
 
 ## Repository Layout
 
